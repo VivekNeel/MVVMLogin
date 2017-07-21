@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">MVVMLogin</string>
+    <string name="activity_login_title">Zolo Login</string>
+    <string name="activity_profile_title">Your Profile</string>
 
     <string name="hint_phone_number">YOUR PHONE NUMBER</string>
     <string name="hint_password">SET PASSWORD</string>
@@ -21,5 +23,10 @@
 
     <string name="error_invalid_credential">Enter valid credential and try again.</string>
     <string name="error_user_already_registered">You are already registered!Please log in or select forgot password</string>
+
+    <string name="update_profile_title">UPDATE PROFILE</string>
+    <string name="update_profile_subtitle">You can update your profile below</string>
+    <string name="update_profile_button_text">UPDATE PROFILE</string>
+    <string name="update_profile_successful_text">Your profile is updated!</string>
 
 </resources>

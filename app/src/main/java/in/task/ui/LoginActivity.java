@@ -25,6 +25,7 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         if (savedInstanceState == null) {
             switchFragment(TAG_LOGIN);
         }

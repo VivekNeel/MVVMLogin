@@ -11,6 +11,7 @@ import in.task.injection.PerActivity;
 import in.task.ui.forgotpassword.ForgotPasswordScreenViewModel;
 import in.task.ui.login.LoginScreenViewModel;
 import in.task.ui.register.RegisterScreenViewModel;
+import in.task.ui.updateprofile.UpdateProfileScreenViewModel;
 
 /**
  * Created by vivek on 21/07/17.
@@ -51,5 +52,11 @@ public class ActivityModule {
     @PerActivity
     ForgotPasswordScreenViewModel provideForgotPasswordViewModel(DataManagerLogic dataManager) {
         return new ForgotPasswordScreenViewModel(dataManager);
+    }
+
+    @Provides
+    @PerActivity
+    UpdateProfileScreenViewModel provideUpdateViewMode(DataManagerLogic dataManager) {
+        return new UpdateProfileScreenViewModel(dataManager);
     }
 }

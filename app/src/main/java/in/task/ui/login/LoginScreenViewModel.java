@@ -29,6 +29,12 @@ public class LoginScreenViewModel extends BaseViewModel<LoginScreenCallback> {
         getCallback().navigateToForgotPasswordFragment();
     }
 
+    public void isUserLoggedIn() {
+        if (getDataManagerLogic().getUserLoggedInState() == 1) {
+            getCallback().navigateToProfile();
+        }
+    }
+
     public void doLogin(String phone, String pass) {
         // User has been already registered with zolo
         if (getDataManagerLogic().checkIfUserIsRegistered(phone, pass)) {

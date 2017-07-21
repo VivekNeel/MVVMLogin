@@ -8,4 +8,6 @@ public interface UpdateProfileCallback {
 
     void initiateUpdateProfile();
 
+    void onUpdateSuccessful();
+
 }

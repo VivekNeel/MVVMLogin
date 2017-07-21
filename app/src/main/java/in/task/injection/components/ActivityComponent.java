@@ -8,6 +8,7 @@ import in.task.injection.module.ActivityModule;
 import in.task.ui.forgotpassword.ForgotPasswordFragment;
 import in.task.ui.login.LoginFragment;
 import in.task.ui.register.RegisterFragment;
+import in.task.ui.updateprofile.UpdateProfileFragment;
 
 /**
  * Created by vivek on 21/07/17.
@@ -22,4 +23,6 @@ public interface ActivityComponent {
     void inject(LoginFragment loginFragment);
 
     void inject(ForgotPasswordFragment forgotPasswordFragment);
+
+    void inject(UpdateProfileFragment updateProfileFragment);
 }

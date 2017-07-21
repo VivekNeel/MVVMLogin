@@ -12,6 +12,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.LoginActivity"
+            android:label="@string/activity_login_title"
             android:theme="@style/AppTheme.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +21,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.ProfileActivity"></activity>
+        <activity
+            android:name=".ui.ProfileActivity"
+            android:theme="@style/AppTheme.NoTitleBar"
+           ></activity>
     </application>
 
 </manifest>

@@ -3,6 +3,7 @@
 
     <dimen name="poster_height">230dp</dimen>
     <dimen name="margin_left">65dp</dimen>
+    <dimen name="button_height">55dp</dimen>
 
     <dimen name="material_text_button">14sp</dimen>
     <dimen name="material_text_menu">14sp</dimen>
