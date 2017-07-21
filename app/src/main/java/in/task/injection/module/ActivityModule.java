@@ -8,7 +8,9 @@ import dagger.Provides;
 import in.task.data.DataManagerLogic;
 import in.task.injection.ActivityContext;
 import in.task.injection.PerActivity;
+import in.task.ui.forgotpassword.ForgotPasswordScreenViewModel;
 import in.task.ui.login.LoginScreenViewModel;
+import in.task.ui.register.RegisterScreenViewModel;
 
 /**
  * Created by vivek on 21/07/17.
@@ -37,5 +39,17 @@ public class ActivityModule {
     @PerActivity
     LoginScreenViewModel provideLoginScreenViewModel(DataManagerLogic dataManager) {
         return new LoginScreenViewModel(dataManager);
+    }
+
+    @Provides
+    @PerActivity
+    RegisterScreenViewModel provideRegisterViewModel(DataManagerLogic dataManager) {
+        return new RegisterScreenViewModel(dataManager);
+    }
+
+    @Provides
+    @PerActivity
+    ForgotPasswordScreenViewModel provideForgotPasswordViewModel(DataManagerLogic dataManager) {
+        return new ForgotPasswordScreenViewModel(dataManager);
     }
 }
