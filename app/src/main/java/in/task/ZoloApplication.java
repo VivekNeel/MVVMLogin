@@ -21,7 +21,7 @@ public class ZoloApplication extends Application {
         applicationComponent = DaggerApplicationComponent.builder().applicationModule(new ApplicationModule(this))
                 .build();
 
-        applicationComponent.injectInto(this);
+        applicationComponent.inject(this);
     }
 
     public ApplicationComponent getApplicationComponent() {

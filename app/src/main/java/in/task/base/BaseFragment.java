@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.View;
 
 import in.task.injection.components.ActivityComponent;
 
@@ -41,6 +42,12 @@ public class BaseFragment extends Fragment {
             return mActivity.getActivityComponent();
         }
         return null;
+    }
+
+    public void createSnackBar(View view, String message) {
+        if (mActivity != null) {
+            mActivity.showSnackbar(view, message);
+        }
     }
 
     public BaseActivity getBaseActivity() {

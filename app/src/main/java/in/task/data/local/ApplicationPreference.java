@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 
 import javax.inject.Inject;
 
-import in.task.data.DataManagerLogic;
 import in.task.injection.ApplicationContext;
 import in.task.injection.PreferenceName;
 

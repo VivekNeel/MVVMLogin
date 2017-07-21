@@ -5,7 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 
 import dagger.Module;
 import dagger.Provides;
+import in.task.data.DataManagerLogic;
 import in.task.injection.ActivityContext;
+import in.task.injection.PerActivity;
+import in.task.ui.login.LoginScreenViewModel;
 
 /**
  * Created by vivek on 21/07/17.
@@ -13,7 +16,6 @@ import in.task.injection.ActivityContext;
 
 @Module
 public class ActivityModule {
-
     private AppCompatActivity mActivity;
 
     public ActivityModule(AppCompatActivity appCompatActivity) {
@@ -31,4 +33,9 @@ public class ActivityModule {
         return mActivity;
     }
 
+    @Provides
+    @PerActivity
+    LoginScreenViewModel provideLoginScreenViewModel(DataManagerLogic dataManager) {
+        return new LoginScreenViewModel(dataManager);
+    }
 }
