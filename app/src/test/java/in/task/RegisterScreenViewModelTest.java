@@ -38,8 +38,9 @@ public class RegisterScreenViewModelTest {
         String phoneNumber = "09909403943S";
         String password = "password";
         String email = "vivektest@gmail.com";
+        String userName = "vivekneel";
 
-        registerScreenViewModel.doRegister(phoneNumber, password, email);
+        registerScreenViewModel.doRegister(phoneNumber, password, email , userName);
         verify(dataManagerLogic).saveUserPassword(password);
         verify(dataManagerLogic).saveUserEmail(email);
         verify(dataManagerLogic).saveUserPhone(phoneNumber);
@@ -54,8 +55,9 @@ public class RegisterScreenViewModelTest {
         String phoneNumber = "09909403943S";
         String password = "password";
         String email = "vivektest@gmail.com";
+        String userName = "vivekneel";
 
-        registerScreenViewModel.doRegister(phoneNumber, password, email);
+        registerScreenViewModel.doRegister(phoneNumber, password, email , userName);
         verify(registerScreenCallback).showUserAleradyRegisteredError();
 
     }

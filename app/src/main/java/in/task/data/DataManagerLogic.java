@@ -30,4 +30,6 @@ public interface DataManagerLogic extends ApplicationPrefrenceLogic {
     boolean checkIfNumberIsAlreadyRegistered(@NonNull String phone);
 
     boolean checkIfUserIsRegistered(@NonNull String phone, @NonNull String password);
+
+    void updateProfile(@NonNull String phone, @NonNull String email, @NonNull String userName);
 }

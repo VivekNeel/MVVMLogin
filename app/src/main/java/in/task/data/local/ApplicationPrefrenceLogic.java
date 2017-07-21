@@ -26,4 +26,8 @@ public interface ApplicationPrefrenceLogic {
 
     void saveUserLoggedInState(int loggedInState);
 
+    void saveUserName(@NonNull String userName);
+
+    String getUserName();
+
 }

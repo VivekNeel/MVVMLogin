@@ -20,6 +20,7 @@ public class ApplicationPreference implements ApplicationPrefrenceLogic {
     private static final String PREF_KEY_CURRENT_USER_PHONE = "PREF_KEY_CURRENT_USER_PHONE";
     private static final String PREF_KEY_CURRENT_USER_PASSWORD = "PREF_KEY_CURRENT_USER_PASS";
     private static final String PREF_KEY_CURRENT_USER_EMAIL = "PREF_KEY_CURRENT_USER_EMAIL";
+    private static final String PREF_KEY_CURRENT_USER_NAME = "PREF_KEY_CURRENT_USER_NAME";
 
 
     private final SharedPreferences sharedPreferences;
@@ -68,5 +69,15 @@ public class ApplicationPreference implements ApplicationPrefrenceLogic {
     @Override
     public void saveUserLoggedInState(int loggedInState) {
         sharedPreferences.edit().putInt(ApplicationPreference.PREF_KEY_USER_LOGGED_IN_STATE, loggedInState).apply();
+    }
+
+    @Override
+    public void saveUserName(@NonNull String userName) {
+        sharedPreferences.edit().putString(PREF_KEY_CURRENT_USER_NAME, userName).apply();
+    }
+
+    @Override
+    public String getUserName() {
+        return sharedPreferences.getString(PREF_KEY_CURRENT_USER_NAME, "");
     }
 }

@@ -63,6 +63,16 @@ public class ApplicationDataManager implements DataManagerLogic {
     }
 
     @Override
+    public void saveUserName(@NonNull String userName) {
+        applicationPreference.saveUserName(userName);
+    }
+
+    @Override
+    public String getUserName() {
+        return applicationPreference.getUserName();
+    }
+
+    @Override
     public boolean checkIfEmailIsAlreadyRegistered(@NonNull String email) {
         return getSavedUserEmail().equals(email);
     }
@@ -75,5 +85,12 @@ public class ApplicationDataManager implements DataManagerLogic {
     @Override
     public boolean checkIfUserIsRegistered(@NonNull String phone, @NonNull String password) {
         return getSavedUserPhone().equals(phone) && getSavedUserPassword().equals(password);
+    }
+
+    @Override
+    public void updateProfile(@NonNull String phone, @NonNull String email, @NonNull String userName) {
+        saveUserEmail(email);
+        saveUserName(userName);
+        saveUserPhone(phone);
     }
 }
