@@ -39,6 +39,7 @@ public class LoginScreenViewModel extends BaseViewModel<LoginScreenCallback> {
         // User has been already registered with zolo
         if (getDataManagerLogic().checkIfUserIsRegistered(phone, pass)) {
             getDataManagerLogic().saveUserPassword(pass);
+            getDataManagerLogic().saveUserLoggedInState(DataManagerLogic.USER_LOGGED_IN);
             getCallback().navigateToProfile();
         } else {
             getCallback().showUserNotRegisteredError();
@@ -47,6 +48,6 @@ public class LoginScreenViewModel extends BaseViewModel<LoginScreenCallback> {
     }
 
     public boolean onFieldChanged(String phone, String pass) {
-      return Utils.onLoginFieldsChanged(phone , pass);
+        return Utils.onLoginFieldsChanged(phone, pass);
     }
 }

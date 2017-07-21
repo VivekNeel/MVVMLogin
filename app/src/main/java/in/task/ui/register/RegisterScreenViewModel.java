@@ -24,7 +24,7 @@ public class RegisterScreenViewModel extends BaseViewModel<RegisterScreenCallbac
 
     public void doRegister(String phone, String pass, String email, String userName) {
         // User has been already registered with zolo
-        if (getDataManagerLogic().checkIfUserIsRegistered(email, phone)) {
+        if (getDataManagerLogic().isEmailOrPhoneAlreadyRegistered(email, phone)) {
             getCallback().showUserAleradyRegisteredError();
             return;
         }

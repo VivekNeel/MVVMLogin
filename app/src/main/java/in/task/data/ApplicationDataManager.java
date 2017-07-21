@@ -88,6 +88,11 @@ public class ApplicationDataManager implements DataManagerLogic {
     }
 
     @Override
+    public boolean isEmailOrPhoneAlreadyRegistered(@NonNull String email, @NonNull String phone) {
+        return getSavedUserEmail().equals(email) || getSavedUserPhone().equals(phone);
+    }
+
+    @Override
     public void updateProfile(@NonNull String phone, @NonNull String email, @NonNull String userName) {
         saveUserEmail(email);
         saveUserName(userName);
