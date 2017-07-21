@@ -78,12 +78,13 @@ public class RegisterFragment extends BaseFragment implements RegisterScreenCall
         String userPassword = fragmentRegisterBinding.etPassword.getText().toString();
 
         registerScreenViewModel.doRegister(userMobile, userPassword, email, userName);
+        hideKeyboard();
 
     }
 
     @Override
     public void navigateToLoginFragment() {
-        ((LoginActivity) getBaseActivity()).switchFragment(LoginActivity.TAG_LOGIN);
+       getBaseActivity().getSupportFragmentManager().popBackStack();
     }
 
     public void setupListeners() {

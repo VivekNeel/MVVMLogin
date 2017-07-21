@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,9 +64,11 @@ public class LoginFragment extends BaseFragment implements LoginScreenCallback {
 
     @Override
     public void login() {
+
         String userMobile = fragmentLoginBinding.etPhoneNumber.getText().toString();
         String userPassword = fragmentLoginBinding.etPassword.getText().toString();
         loginScreenViewModel.doLogin(userMobile, userPassword);
+        hideKeyboard();
     }
 
     @Override
