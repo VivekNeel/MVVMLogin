@@ -10,4 +10,6 @@ public interface UpdateProfileCallback {
 
     void onUpdateSuccessful();
 
+    void onLogoutSuccessful();
+
 }

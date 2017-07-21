@@ -17,6 +17,7 @@ import in.task.databinding.FragmentUpdateProfileBinding;
 import in.task.injection.components.ActivityComponent;
 import in.task.rx.RXBus;
 import in.task.rx.event.Events;
+import in.task.ui.LoginActivity;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 
@@ -36,6 +37,12 @@ public class UpdateProfileFragment extends BaseFragment implements UpdateProfile
         UpdateProfileFragment fragment = new UpdateProfileFragment();
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onLogoutSuccessful() {
+        LoginActivity.start(getBaseActivity());
+        getBaseActivity().finish();
     }
 
     @Nullable

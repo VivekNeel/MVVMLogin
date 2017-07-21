@@ -1,5 +1,7 @@
 package in.task.ui;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentTransaction;
@@ -25,10 +27,14 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
         if (savedInstanceState == null) {
             switchFragment(TAG_LOGIN);
         }
+    }
+
+    public static void start(Context context) {
+        Intent starter = new Intent(context, LoginActivity.class);
+        context.startActivity(starter);
     }
 
     public void switchFragment(String tag) {

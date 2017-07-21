@@ -25,6 +25,11 @@ public class UpdateProfileScreenViewModel extends BaseViewModel<UpdateProfileCal
         super(dataManagerLogic);
     }
 
+    public void onLogoutButtonClicked() {
+        getDataManagerLogic().saveUserLoggedInState(DataManagerLogic.USER_NOT_LOGGED_IN);
+        getCallback().onLogoutSuccessful();
+    }
+
     public void onUpdateButtonClicked() {
         getCallback().initiateUpdateProfile();
     }
