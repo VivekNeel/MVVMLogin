@@ -49,6 +49,8 @@ public class RegisterFragment extends BaseFragment implements RegisterScreenCall
 
         fragmentRegisterBinding.setRegisterViewmodel(registerScreenViewModel);
         registerScreenViewModel.setCallback(this);
+
+        checkFieldValidation();
         setupListeners();
 
         return fragmentRegisterBinding.getRoot();

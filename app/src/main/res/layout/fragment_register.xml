@@ -86,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="40dp"
                 android:cursorVisible="true"
                 android:hint="@string/hint_phone_number"
                 android:inputType="phone"
@@ -114,7 +114,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="40dp"
                 android:cursorVisible="true"
                 android:hint="@string/hint_email"
                 android:inputType="textEmailAddress"
@@ -141,7 +141,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="40dp"
                 android:cursorVisible="true"
                 android:hint="@string/hint_name"
                 android:inputType="text"
@@ -170,7 +170,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="40dp"
                 android:cursorVisible="true"
                 android:inputType="textPassword"
                 android:maxLength="12"
@@ -183,7 +183,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="22dp"
             android:background="@drawable/ic_local_phone_white_24dp"
             app:layout_constraintRight_toLeftOf="@id/etPhoneNumberContainer"
             app:layout_constraintTop_toBottomOf="@id/ivCover" />
@@ -191,7 +191,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="22dp"
             android:background="@drawable/ic_email_white_24dp"
             app:layout_constraintRight_toLeftOf="@id/etPhoneNumberContainer"
             app:layout_constraintTop_toBottomOf="@+id/etPhoneNumberContainer" />
@@ -199,7 +199,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="22dp"
             android:background="@drawable/ic_name_white_24dp"
             app:layout_constraintRight_toLeftOf="@+id/etPhoneNumberContainer"
             app:layout_constraintTop_toBottomOf="@+id/etEmailContainer" />
@@ -207,7 +207,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/ic_password_white_24dp"
             app:layout_constraintRight_toLeftOf="@id/etPhoneNumberContainer"
             app:layout_constraintTop_toBottomOf="@+id/etNameContainer" />
@@ -218,7 +218,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="45dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="40dp"
             android:layout_marginTop="10dp"
             android:enabled="false"
             android:onClick="@{() -> registerViewmodel.onRegisterButtonClicked()}"

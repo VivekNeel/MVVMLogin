@@ -46,6 +46,8 @@ public class ForgotPasswordFragment extends BaseFragment implements ForgotPasswo
 
         fragmentForgotPasswordBinding.setForgotPasswordViewmodel(forgotPasswordScreenViewModel);
         forgotPasswordScreenViewModel.setCallback(this);
+
+        checkFieldValidation();
         setupListeners();
         return fragmentForgotPasswordBinding.getRoot();
     }

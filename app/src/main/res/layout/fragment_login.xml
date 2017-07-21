@@ -11,9 +11,9 @@
     </data>
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/loginRoot"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/loginRoot"
         android:background="@color/colorPrimary">
 
 
@@ -26,13 +26,11 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <ImageView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_zolo"
-            android:textColor="@color/white"
-            android:textSize="@dimen/material_text_headline"
+            android:background="@drawable/zolo_trans"
             app:layout_constraintBottom_toBottomOf="@id/ivCover"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -55,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_left"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:textColorHint="@color/colorAccent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -67,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="40dp"
                 android:cursorVisible="true"
                 android:hint="@string/hint_phone_number"
                 android:inputType="phone"
@@ -96,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="40dp"
                 android:cursorVisible="true"
                 android:inputType="textPassword"
                 android:maxLength="12"
@@ -109,7 +107,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/ic_local_phone_white_24dp"
             app:layout_constraintRight_toLeftOf="@id/etPhoneNumberContainer"
             app:layout_constraintTop_toBottomOf="@id/ivCover" />
@@ -117,7 +115,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/ic_password_white_24dp"
             app:layout_constraintRight_toLeftOf="@id/etPhoneNumberContainer"
             app:layout_constraintTop_toBottomOf="@+id/etPhoneNumberContainer" />
@@ -127,7 +125,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="45dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="40dp"
             android:layout_marginTop="10dp"
             android:enabled="false"
             android:onClick="@{() -> loginViewmodel.onLoginButtonClicked()}"
@@ -139,8 +137,8 @@
         <TextView
             android:id="@+id/tvForgotPassword"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="30dp"
             android:onClick="@{() -> loginViewmodel.onForgotPasswordClicked()}"
             android:text="@string/forgot_password"
             android:textColor="@color/white"
@@ -152,10 +150,9 @@
         <Button
             android:id="@+id/btRegister"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/button_height"
             android:layout_marginLeft="45dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginRight="40dp"
             android:background="@drawable/shape_rectangle"
             android:onClick="@{() -> loginViewmodel.onRegisterButtonClicked()}"
             android:text="@string/bt_create_account"

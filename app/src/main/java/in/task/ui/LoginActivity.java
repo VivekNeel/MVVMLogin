@@ -31,12 +31,13 @@ public class LoginActivity extends BaseActivity {
         }
     }
 
-
     public void switchFragment(String tag) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
         switch (tag) {
             case TAG_LOGIN:
                 fragmentTransaction.replace(R.id.fragment_container, LoginFragment.newInstance(), tag);
+
                 break;
 
             case TAG_REGISTER:

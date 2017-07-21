@@ -54,6 +54,8 @@ public class LoginFragment extends BaseFragment implements LoginScreenCallback {
 
         // check if the user is already logged in , if yes navigate to profile activity
         loginScreenViewModel.isUserLoggedIn();
+
+        checkFieldValidation();
         setupListeners();
 
         return fragmentLoginBinding.getRoot();
