@@ -10,158 +10,164 @@
 
     </data>
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/loginRoot"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary">
 
-
-        <ImageView
-            android:id="@+id/ivCover"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/poster_height"
-            app:srcCompat="@drawable/cover"
-            android:scaleType="centerCrop"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/zolo_trans"
-            app:layout_constraintBottom_toBottomOf="@id/ivCover"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/ivCover" />
-
-        <TextView
-            android:id="@+id/tvTitleDesc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/title_desc"
-            android:textColor="@color/white"
-            android:textSize="@dimen/material_text_caption"
-            app:layout_constraintBottom_toBottomOf="@id/ivCover"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvTitle" />
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/etPhoneNumberContainer"
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/loginRoot"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_left"
-            android:layout_marginTop="30dp"
-            android:textColorHint="@color/colorAccent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivCover">
+            android:layout_height="match_parent">
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/etPhoneNumber"
-                style="@style/TextStyle"
+            <ImageView
+                android:id="@+id/ivCover"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/poster_height"
+                android:scaleType="centerCrop"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/cover" />
+
+            <ImageView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/zolo_trans"
+                app:layout_constraintBottom_toBottomOf="@id/ivCover"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivCover" />
+
+            <TextView
+                android:id="@+id/tvTitleDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_desc"
+                android:textColor="@color/white"
+                android:textSize="@dimen/material_text_caption"
+                app:layout_constraintBottom_toBottomOf="@id/ivCover"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/etPhoneNumberContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="40dp"
-                android:cursorVisible="true"
-                android:hint="@string/hint_phone_number"
-                android:inputType="phone"
-                android:maxLength="12"
-                android:paddingBottom="12dp"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginTop="30dp"
                 android:textColorHint="@color/colorAccent"
-                android:textSize="@dimen/material_text_body1" />
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivCover">
 
-        </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etPhoneNumber"
+                    style="@style/TextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="40dp"
+                    android:cursorVisible="true"
+                    android:hint="@string/hint_phone_number"
+                    android:inputType="phone"
+                    android:maxLength="12"
+                    android:paddingBottom="12dp"
+                    android:textColorHint="@color/colorAccent"
+                    android:textSize="@dimen/material_text_body1" />
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/etPasswordContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_left"
-            android:hint="@string/hint_password_login"
-            android:textColorHint="@color/colorAccent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPhoneNumberContainer"
-            app:passwordToggleEnabled="true">
+            </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/etPassword"
-                style="@style/TextStyle"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/etPasswordContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="40dp"
-                android:cursorVisible="true"
-                android:inputType="textPassword"
-                android:maxLength="12"
-                android:paddingBottom="12dp"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:hint="@string/hint_password_login"
                 android:textColorHint="@color/colorAccent"
-                android:textSize="@dimen/material_text_body1" />
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etPhoneNumberContainer"
+                app:passwordToggleEnabled="true">
 
-        </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etPassword"
+                    style="@style/TextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="40dp"
+                    android:cursorVisible="true"
+                    android:inputType="textPassword"
+                    android:maxLength="12"
+                    android:paddingBottom="12dp"
+                    android:textColorHint="@color/colorAccent"
+                    android:textSize="@dimen/material_text_body1" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/ic_local_phone_white_24dp"
-            app:layout_constraintRight_toLeftOf="@id/etPhoneNumberContainer"
-            app:layout_constraintTop_toBottomOf="@id/ivCover" />
+            </android.support.design.widget.TextInputLayout>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/ic_password_white_24dp"
-            app:layout_constraintRight_toLeftOf="@id/etPhoneNumberContainer"
-            app:layout_constraintTop_toBottomOf="@+id/etPhoneNumberContainer" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/ic_local_phone_white_24dp"
+                app:layout_constraintRight_toLeftOf="@id/etPhoneNumberContainer"
+                app:layout_constraintTop_toBottomOf="@id/ivCover" />
 
-        <Button
-            android:id="@+id/btLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="45dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginTop="10dp"
-            android:enabled="false"
-            android:onClick="@{() -> loginViewmodel.onLoginButtonClicked()}"
-            android:text="@string/bt_login"
-            android:textSize="@dimen/material_text_button"
-            app:layout_constraintTop_toBottomOf="@id/etPasswordContainer" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/ic_password_white_24dp"
+                app:layout_constraintRight_toLeftOf="@id/etPhoneNumberContainer"
+                app:layout_constraintTop_toBottomOf="@+id/etPhoneNumberContainer" />
 
-
-        <TextView
-            android:id="@+id/tvForgotPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/button_height"
-            android:layout_marginTop="30dp"
-            android:onClick="@{() -> loginViewmodel.onForgotPasswordClicked()}"
-            android:text="@string/forgot_password"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btLogin" />
-
-        <Button
-            android:id="@+id/btRegister"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/button_height"
-            android:layout_marginLeft="45dp"
-            android:layout_marginRight="40dp"
-            android:background="@drawable/shape_rectangle"
-            android:onClick="@{() -> loginViewmodel.onRegisterButtonClicked()}"
-            android:text="@string/bt_create_account"
-            android:textColor="@color/white"
-            android:textSize="@dimen/material_text_button"
-            app:layout_constraintTop_toBottomOf="@+id/tvForgotPassword" />
+            <Button
+                android:id="@+id/btLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="10dp"
+                android:enabled="false"
+                android:onClick="@{() -> loginViewmodel.onLoginButtonClicked()}"
+                android:text="@string/bt_login"
+                android:textSize="@dimen/material_text_button"
+                app:layout_constraintTop_toBottomOf="@id/etPasswordContainer" />
 
 
-    </android.support.constraint.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="30dp"
+                android:onClick="@{() -> loginViewmodel.onForgotPasswordClicked()}"
+                android:text="@string/forgot_password"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btLogin" />
+
+            <Button
+                android:id="@+id/btRegister"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/shape_rectangle"
+                android:onClick="@{() -> loginViewmodel.onRegisterButtonClicked()}"
+                android:text="@string/bt_create_account"
+                android:textColor="@color/white"
+                android:textSize="@dimen/material_text_button"
+                app:layout_constraintTop_toBottomOf="@+id/tvForgotPassword" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
 
 </layout>
