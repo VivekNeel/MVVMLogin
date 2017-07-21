@@ -26,8 +26,7 @@ public class UpdateProfileScreenViewModel extends BaseViewModel<UpdateProfileCal
     }
 
     public void onLogoutButtonClicked() {
-        getDataManagerLogic().saveUserLoggedInState(DataManagerLogic.USER_NOT_LOGGED_IN);
-        getCallback().onLogoutSuccessful();
+        getCallback().showLogoutDialog();
     }
 
     public void onUpdateButtonClicked() {
@@ -48,6 +47,12 @@ public class UpdateProfileScreenViewModel extends BaseViewModel<UpdateProfileCal
 
     public boolean onFieldChanged(String phone, String email, String userName) {
         return Utils.onProfileFieldsChanged(phone, userName, email);
+    }
+
+    public void doLogout() {
+        getDataManagerLogic().saveUserLoggedInState(DataManagerLogic.USER_NOT_LOGGED_IN);
+        getCallback().onLogoutSuccessful();
+
     }
 
 }

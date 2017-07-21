@@ -1,5 +1,8 @@
 package in.task.ui.updateprofile;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,6 +17,7 @@ import javax.inject.Inject;
 import in.task.R;
 import in.task.base.BaseFragment;
 import in.task.databinding.FragmentUpdateProfileBinding;
+import in.task.injection.ActivityContext;
 import in.task.injection.components.ActivityComponent;
 import in.task.rx.RXBus;
 import in.task.rx.event.Events;
@@ -31,6 +35,10 @@ public class UpdateProfileFragment extends BaseFragment implements UpdateProfile
     UpdateProfileScreenViewModel updateProfileScreenViewModel;
 
     private FragmentUpdateProfileBinding fragmentUpdateProfileBinding;
+
+    @Inject
+    @ActivityContext
+    Context context;
 
     public static UpdateProfileFragment newInstance() {
         Bundle args = new Bundle();
@@ -179,4 +187,22 @@ public class UpdateProfileFragment extends BaseFragment implements UpdateProfile
         });
     }
 
+    @Override
+    public void showLogoutDialog() {
+       final AlertDialog alertDialog = new AlertDialog.Builder(context)
+                .setTitle("Logout")
+                .setMessage("Are you sure you want to logout?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        updateProfileScreenViewModel.doLogout();
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        }).create();
+
+       alertDialog.show();
+    }
 }

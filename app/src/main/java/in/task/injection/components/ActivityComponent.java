@@ -1,8 +1,12 @@
 package in.task.injection.components;
 
+import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
+
 import javax.inject.Singleton;
 
 import dagger.Component;
+import in.task.injection.ActivityContext;
 import in.task.injection.PerActivity;
 import in.task.injection.module.ActivityModule;
 import in.task.ui.forgotpassword.ForgotPasswordFragment;
@@ -17,6 +21,11 @@ import in.task.ui.updateprofile.UpdateProfileFragment;
 @PerActivity
 @Component(dependencies = ApplicationComponent.class, modules = ActivityModule.class)
 public interface ActivityComponent {
+
+    @ActivityContext
+    Context context();
+
+    AppCompatActivity activity();
 
     void inject(RegisterFragment registerFragment);
 

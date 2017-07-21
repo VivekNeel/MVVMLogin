@@ -12,4 +12,6 @@ public interface UpdateProfileCallback {
 
     void onLogoutSuccessful();
 
+    void showLogoutDialog();
+
 }
