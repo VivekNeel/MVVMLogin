@@ -36,7 +36,6 @@ public class LoginActivity extends BaseActivity {
         switch (tag) {
             case TAG_LOGIN:
                 fragmentTransaction.replace(R.id.fragment_container, LoginFragment.newInstance(), tag);
-                fragmentTransaction.addToBackStack(null);
                 break;
 
             case TAG_REGISTER:
@@ -51,4 +50,5 @@ public class LoginActivity extends BaseActivity {
 
         fragmentTransaction.commit();
     }
+
 }
