@@ -35,7 +35,7 @@ public class LoginViewModelTests {
 
 
     @Test
-    public void checkLoginSuccess() {
+    public void testLoginSuccess() {
         String phoneNumber = "09909403943S";
         String password = "password";
 
@@ -47,7 +47,7 @@ public class LoginViewModelTests {
     }
 
     @Test
-    public void checkLoginFailure() {
+    public void testLoginFailure() {
         String phoneNumber = "09909403943S";
         String password = "password";
 
