@@ -15,8 +15,12 @@ import in.task.R;
 import in.task.base.BaseFragment;
 import in.task.databinding.FragmentRegisterBinding;
 import in.task.injection.components.ActivityComponent;
+import in.task.rx.RXBus;
+import in.task.rx.event.Events;
 import in.task.ui.LoginActivity;
 import in.task.ui.ProfileActivity;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
 
 /**
  * Created by vivek on 21/07/17.
@@ -57,6 +61,43 @@ public class RegisterFragment extends BaseFragment implements RegisterScreenCall
     }
 
     @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
+        compositeDisposable.add(RXBus.getInstance().toObservable().observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<Object>() {
+                    @Override
+                    public void accept(Object o) throws Exception {
+                        if (o instanceof Events.EmailEvent) {
+                            if (((Events.EmailEvent) o).isEmailValid()) {
+                                fragmentRegisterBinding.etEmail.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_check_circle_green_24dp, 0);
+                            } else {
+                                fragmentRegisterBinding.etEmail.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                            }
+                        } else if (o instanceof Events.PhoneEvent) {
+                            if (((Events.PhoneEvent) o).isMobileNumberValid()) {
+                                fragmentRegisterBinding.etPhoneNumber.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_check_circle_green_24dp, 0);
+                            } else {
+                                fragmentRegisterBinding.etPhoneNumber.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                            }
+                        } else if (o instanceof Events.NameEvent) {
+                            if (((Events.NameEvent) o).isUserNameValid()) {
+                                fragmentRegisterBinding.etUserName.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_check_circle_green_24dp, 0);
+                            } else {
+                                fragmentRegisterBinding.etUserName.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                            }
+                        } else if (o instanceof Events.PasswordEvent) {
+                            if (((Events.PasswordEvent) o).isPasswordValid()) {
+                                fragmentRegisterBinding.etPassword.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_check_circle_green_24dp, 0);
+                            } else {
+                                fragmentRegisterBinding.etPassword.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                            }
+                        }
+                    }
+                }));
+        super.onViewCreated(view, savedInstanceState);
+    }
+
+    @Override
     public void navigateToProfileActivity() {
         ProfileActivity.start(getBaseActivity());
         getBaseActivity().finish();
@@ -86,7 +127,7 @@ public class RegisterFragment extends BaseFragment implements RegisterScreenCall
 
     @Override
     public void navigateToLoginFragment() {
-       getBaseActivity().getSupportFragmentManager().popBackStack();
+        getBaseActivity().getSupportFragmentManager().popBackStack();
     }
 
     public void setupListeners() {

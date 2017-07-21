@@ -21,7 +21,8 @@
             android:id="@+id/ivCover"
             android:layout_width="0dp"
             android:layout_height="@dimen/poster_height"
-            android:background="@drawable/cover"
+            app:srcCompat="@drawable/cover"
+            android:scaleType="centerCrop"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -81,7 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_left"
-            android:hint="@string/hint_password"
+            android:hint="@string/hint_password_login"
             android:textColorHint="@color/colorAccent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

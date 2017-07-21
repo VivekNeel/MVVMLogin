@@ -15,6 +15,10 @@ import in.task.R;
 import in.task.base.BaseFragment;
 import in.task.databinding.FragmentUpdateProfileBinding;
 import in.task.injection.components.ActivityComponent;
+import in.task.rx.RXBus;
+import in.task.rx.event.Events;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
 
 /**
  * Created by vivek on 21/07/17.
@@ -47,6 +51,36 @@ public class UpdateProfileFragment extends BaseFragment implements UpdateProfile
         setupListeners();
         setupViews();
         return fragmentUpdateProfileBinding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        compositeDisposable.add(RXBus.getInstance().toObservable().observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<Object>() {
+                    @Override
+                    public void accept(Object o) throws Exception {
+                        if (o instanceof Events.EmailEvent) {
+                            if (((Events.EmailEvent) o).isEmailValid()) {
+                                fragmentUpdateProfileBinding.etEmail.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_check_circle_green_24dp, 0);
+                            } else {
+                                fragmentUpdateProfileBinding.etEmail.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                            }
+                        } else if (o instanceof Events.PhoneEvent) {
+                            if (((Events.PhoneEvent) o).isMobileNumberValid()) {
+                                fragmentUpdateProfileBinding.etPhoneNumber.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_check_circle_green_24dp, 0);
+                            } else {
+                                fragmentUpdateProfileBinding.etPhoneNumber.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                            }
+                        } else if (o instanceof Events.NameEvent) {
+                            if (((Events.NameEvent) o).isUserNameValid()) {
+                                fragmentUpdateProfileBinding.etUserName.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_check_circle_green_24dp, 0);
+                            } else {
+                                fragmentUpdateProfileBinding.etUserName.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                            }
+                        }
+                    }
+                }));
+        super.onViewCreated(view, savedInstanceState);
     }
 
     @Override

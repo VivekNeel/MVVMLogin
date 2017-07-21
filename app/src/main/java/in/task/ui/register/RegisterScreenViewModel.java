@@ -1,7 +1,5 @@
 package in.task.ui.register;
 
-import android.text.TextUtils;
-
 import javax.inject.Inject;
 
 import in.task.Utils;
@@ -45,16 +43,6 @@ public class RegisterScreenViewModel extends BaseViewModel<RegisterScreenCallbac
     }
 
     public boolean onFieldChanged(String phone, String email, String userName, String pass) {
-        boolean result = true;
-        if (!Utils.isEmailValid(email)) {
-            result = false;
-        } else if (!Utils.isPhoneNumberValid(phone)) {
-            result = false;
-        } else if (TextUtils.isEmpty(userName)) {
-            result = false;
-        } else if (!Utils.isPasswordValid(pass)) {
-            result = false;
-        }
-        return result;
+        return Utils.onRegisterFieldsChanged(phone , email , userName , pass);
     }
 }

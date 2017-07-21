@@ -42,15 +42,7 @@ public class UpdateProfileScreenViewModel extends BaseViewModel<UpdateProfileCal
 
 
     public boolean onFieldChanged(String phone, String email, String userName) {
-        boolean result = true;
-        if (!Utils.isEmailValid(email)) {
-            result = false;
-        } else if (!Utils.isPhoneNumberValid(phone)) {
-            result = false;
-        } else if (TextUtils.isEmpty(userName)) {
-            result = false;
-        }
-        return result;
+        return Utils.onProfileFieldsChanged(phone, userName, email);
     }
 
 }

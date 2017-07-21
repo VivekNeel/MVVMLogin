@@ -45,7 +45,10 @@ dependencies {
     testCompile "org.mockito:mockito-core:$rootProject.mockitoVersion"
     testAnnotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
 
-    compile "com.android.support.constraint:constraint-layout:$rootProject.constraintLayout"
+    compile "io.reactivex.rxjava2:rxjava:$rootProject.rxVersion"
+    compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxVersion"
+
+    compile "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
 
 
 }

@@ -47,12 +47,6 @@ public class LoginScreenViewModel extends BaseViewModel<LoginScreenCallback> {
     }
 
     public boolean onFieldChanged(String phone, String pass) {
-        boolean result = true;
-        if (!Utils.isPhoneNumberValid(phone)) {
-            result = false;
-        } else if (!Utils.isPasswordValid(pass)) {
-            result = false;
-        }
-        return result;
+      return Utils.onLoginFieldsChanged(phone , pass);
     }
 }

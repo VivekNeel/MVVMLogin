@@ -3,10 +3,12 @@ package in.task.base;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.PluralsRes;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
 import in.task.injection.components.ActivityComponent;
+import io.reactivex.disposables.CompositeDisposable;
 
 /**
  * Created by vivek on 21/07/17.
@@ -15,6 +17,8 @@ import in.task.injection.components.ActivityComponent;
 public class BaseFragment extends Fragment {
 
     private BaseActivity mActivity;
+
+    protected CompositeDisposable compositeDisposable = new CompositeDisposable();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,7 +38,18 @@ public class BaseFragment extends Fragment {
     @Override
     public void onDetach() {
         mActivity = null;
+        if (compositeDisposable != null) {
+            compositeDisposable.clear();
+        }
         super.onDetach();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (compositeDisposable != null) {
+            compositeDisposable.clear();
+        }
     }
 
     public ActivityComponent getActivityComponent() {
